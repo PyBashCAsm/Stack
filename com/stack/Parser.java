@@ -1,5 +1,10 @@
-package com.parser;
+package com.stack;
+
+import com.stack.InputStream;
 
 public class Parser {
-	public 
+	private InputStream input;
+	public Parser(InputStream is){
+		input=is;
+	}
 }

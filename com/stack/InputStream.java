@@ -9,7 +9,6 @@ public class InputStream {
 	public InputStream(String filename) throws IOException {
 		input=new BufferedReader(new FileReader(filename));
 	}
-	pri
 	public String getWord() throws IOException {
 		if (!input.ready()) return null;
 		char next=0;
@@ -17,11 +16,10 @@ public class InputStream {
 		while(input.ready()){
 			next=(char)input.read();
 			if (next==' ')
-				if (sb.length()
 				break;
 			else 
 				sb.append(next);
-		};
+		}
 		return sb.toString();
 	}
 

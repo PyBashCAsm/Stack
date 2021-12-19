@@ -7,10 +7,9 @@ public class Main {
 	public static void main (String[] args) throws Exception {
 		InputStream stdin=new InputStream(args[0]);
 		String a=" ";
-		while (a!=null){
-			//System.out.println("Will Read");
+		do {
 			a=stdin.getWord();
 			System.out.println(a);
-		}
+		} while(a!=null);
 	}
 }
