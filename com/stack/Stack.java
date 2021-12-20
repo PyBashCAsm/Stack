@@ -31,7 +31,7 @@ public class Stack <T>  {
 		if (stackIndex==0) 
 			throw new StackEmptyException();
 		else {
-			stack[stackIndex]=null;
+			stack.remove(stackIndex);
 			--stackIndex;
 		}
 	}
