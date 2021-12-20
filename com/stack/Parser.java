@@ -7,4 +7,7 @@ public class Parser {
 	public Parser(InputStream is){
 		input=is;
 	}
+	public boolean parseAndExec(){
+		return false;
+	}
 }
