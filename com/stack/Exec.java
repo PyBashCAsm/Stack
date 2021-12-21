@@ -14,4 +14,7 @@ public class Exec {
 	public void print(){
 		stack.displayContents();
 	}
+	public void add(){
+		stack.push(stack.pop().doubleValue()+stack.pop().doubleValue());
+	}
 }

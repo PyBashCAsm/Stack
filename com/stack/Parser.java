@@ -26,6 +26,9 @@ public class Parser {
 					ins=Instructions.INS_LOAD;
 					numArgs=1;
 					break;
+				case "add" :
+					ex.add();
+					return true;
 				case "print":
 					ex.print();
 					return true;

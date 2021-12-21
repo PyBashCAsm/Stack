@@ -12,7 +12,7 @@ public class Stack <T>  {
 	public Stack  (int capacity){
 		caps=capacity;
 		stack=new ArrayList<>();
-		stackIndex=0;
+		stackIndex=-1;
 	}
 	private boolean stackNotFull(){
 		return stackIndex < caps;
@@ -24,17 +24,20 @@ public class Stack <T>  {
 		}
 		else throw new StackOverflowException();
 	}
-	public void pop(){
-		if (stackIndex==0) 
+	public T pop(){
+		T ret;
+		if (stackIndex==-1)
 			throw new StackEmptyException();
 		else {
+			ret=stack.get(stackIndex);
 			stack.remove(stackIndex);
 			--stackIndex;
 		}
+		return ret;
 	}
 	public void displayContents(){
 		System.out.print("[ ");
-		for (int i=0;i<stackIndex;i++){
+		for (int i=0;i<=stackIndex;i++){
 			System.out.print(stack.get(i).toString());
 			System.out.print(" ");
 		}
