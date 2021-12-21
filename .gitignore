@@ -2,3 +2,4 @@ Test/*
 com/stack/*.class
 com/stack/exceptions/*.class
 out/*
+build/*
