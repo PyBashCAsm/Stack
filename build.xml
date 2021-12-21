@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Hello World Project" default="build">
+<project name="Stack PL" default="build">
 	<property name="build.dir" value="build/"/>
 	<target name="build">
 		<mkdir dir="${build.dir}"/>
