@@ -11,11 +11,11 @@ public class InputStream {
 	}
 	public String getWord() throws IOException {
 		if (!input.ready()) return null;
-		char next=0;
+		char next;
 		StringBuilder sb=new StringBuilder();
 		while(input.ready()){
 			next=(char)input.read();
-			if (next==' ')
+			if (next==' ' || next=='\n')
 				break;
 			else 
 				sb.append(next);

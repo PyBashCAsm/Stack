@@ -6,19 +6,16 @@ import com.stack.exceptions.StackEmptyException;
 import java.util.ArrayList;
 
 public class Stack <T>  {
-	private int caps;
-	private ArrayList<T> stack;
+	private final int caps;
+	private final ArrayList<T> stack;
 	private int stackIndex;
 	public Stack  (int capacity){
 		caps=capacity;
-		stack=new ArrayList<T>();
+		stack=new ArrayList<>();
 		stackIndex=0;
 	}
 	private boolean stackNotFull(){
-		if (stackIndex<caps) 
-			return true;
-		else 
-			return false;
+		return stackIndex < caps;
 	}
 	public void push(T item){
 		if (stackNotFull()) {
@@ -34,5 +31,13 @@ public class Stack <T>  {
 			stack.remove(stackIndex);
 			--stackIndex;
 		}
+	}
+	public void displayContents(){
+		System.out.print("[ ");
+		for (int i=0;i<stackIndex;i++){
+			System.out.print(stack.get(i).toString());
+			System.out.print(" ");
+		}
+		System.out.print(" ]");
 	}
 }

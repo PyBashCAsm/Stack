@@ -1,18 +1,17 @@
 package com.stack;
 
-import com.stack.Stack;
 
 public class Exec {
-	private final Stack<Integer> iStack;
-	private final Stack<Double> fStack;
-	public Exec(Stack<Integer> intStack,Stack<Double> fltStack) {
-		iStack=intStack;
-		fStack=fltStack;
+	private final Stack<Number> stack;
+	public Exec(Stack<Number> Stack) {
+		this.stack=Stack;
 	}
-	public void load (int toLoad){
-		iStack.push(toLoad);
+	public void load (Number[] toLoad){
+		for (Number i:toLoad) {
+			stack.push(i);
+		}
 	}
-	public void load (double toLoad){
-		fStack.push(toLoad);
+	public void print(){
+		stack.displayContents();
 	}
 }

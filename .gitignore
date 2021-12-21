@@ -1,3 +1,4 @@
 Test/*
 com/stack/*.class
-coms/stack/exceptions/*.class
+com/stack/exceptions/*.class
+out/*
