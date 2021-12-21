@@ -3,7 +3,6 @@ Stack is a very simple programming language with minimal features .\
 As the name suggests, this language is totally based around a stack. \
 It supports many of the widely used stack operations such as load,pop etc. \
 You can also use instructions like add,sub etc. for performing mathematical opertions on the elements stored in the stack.\
-\
 It can also be very helpful when you are learning about stacks and need a hands-on experience as to how it works\
 \
 \
