@@ -2,6 +2,7 @@ package com.stack;
 
 import com.stack.exceptions.NoSuchInstructionException;
 import com.stack.exceptions.InvalidValueException;
+import com.stack.exceptions.TooFewArgsException;
 import java.io.IOException;
 
 public class Parser {
@@ -16,6 +17,26 @@ public class Parser {
 
 	private enum Instructions {
 		INS_LOAD,
+		INS_MLOAD
+	}
+
+	private Number parseNum(String parse){
+		try    
+		{ 
+			int num=Integer.parseInt(parse); 
+			return num;
+		}
+		catch(NumberFormatException e)
+		{               
+			try { 
+				double dnum=Double.parseDouble(parse);
+				return dnum;
+			}
+			
+			catch (NumberFormatException err){  
+				return null;
+			}        
+		}
 	}
 
 	public boolean parseAndExec() throws IOException {
@@ -27,13 +48,16 @@ public class Parser {
 		else {
 			int numArgs=0;
 			Instructions ins=null;
+			boolean varArgs=false;
 
 			switch(read){
 				case "load":
 					ins=Instructions.INS_LOAD;
 					numArgs=1;
 					break;
-
+				case "mload":
+					ins=Instructions.INS_MLOAD;
+					varArgs=true;
 				case "add" :
 					ex.add();
 					return true;
@@ -47,25 +71,14 @@ public class Parser {
 			}
 
 			Number[] args=new Number[numArgs];
-
 			for (int i=0;i<numArgs;i++){
-				String tmp=input.getWord();
-
-				try
-				{
-					int num=Integer.parseInt(tmp);
-					args[i]=num;
-				}
-				catch(NumberFormatException e)
-				{
-					try {
-						double dnum=Double.parseDouble(tmp);
-						args[i]=dnum;
-					}
-					catch (NumberFormatException err){
-						throw new InvalidValueException(tmp, ins.name());
-					}
-				}
+				String arg=input.getWord();
+				if (arg==null)
+				throw new TooFewArgsException(numArgs,ins.name());
+				Number num=parseNum(arg);
+				if (num==null) 
+				throw new InvalidValueException(arg,ins.name());
+				args[i]=num;
 			}
 
 			switch (ins){
