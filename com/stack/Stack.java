@@ -8,11 +8,14 @@ import java.util.ArrayList;
 public class Stack <T>  {
 	private final int caps;
 	private final ArrayList<T> stack;
-	private int stackIndex;
+	private int stackIndex=-1;
 	public Stack  (int capacity){
 		caps=capacity;
-		stack=new ArrayList<>();
-		stackIndex=-1;
+		stack=new ArrayList<>(caps);
+	}
+	public Stack (){
+		caps=30;
+		stack=new ArrayList<>(caps);
 	}
 	private boolean stackNotFull(){
 		return stackIndex < caps;
