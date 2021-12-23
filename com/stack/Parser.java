@@ -16,8 +16,9 @@ public class Parser {
 	}
 
 	private enum Instructions {
-		INS_LOAD,
-		INS_MLOAD
+		LOAD,
+		MLOAD,
+		REMOVE
 	}
 
 	private Number parseNum(String parse){
@@ -39,7 +40,7 @@ public class Parser {
 		}
 	}
 
-	public boolean parseAndExec() throws IOException {
+	public boolean parseAndExec() throws IOException,NoSuchInstructionException,InvalidValueException,TooFewArgsException {
 		String read=input.getWord();
 		if (read==null) return false;
 
@@ -47,17 +48,21 @@ public class Parser {
 
 		else {
 			int numArgs=0;
-			Instructions ins=null;
+			Instructions ins;
 			boolean varArgs=false;
 
 			switch(read){
 				case "load":
-					ins=Instructions.INS_LOAD;
+					ins=Instructions.LOAD;
 					numArgs=1;
 					break;
 				case "mload":
-					ins=Instructions.INS_MLOAD;
+					ins=Instructions.MLOAD;
 					varArgs=true;
+				case "remove":
+					ins=Instructions.REMOVE;
+					numArgs=0;
+					break;
 				case "add" :
 					ex.add();
 					return true;
@@ -73,17 +78,21 @@ public class Parser {
 			Number[] args=new Number[numArgs];
 			for (int i=0;i<numArgs;i++){
 				String arg=input.getWord();
+				Number num;
 				if (arg==null)
-				throw new TooFewArgsException(numArgs,ins.name());
-				Number num=parseNum(arg);
-				if (num==null) 
-				throw new InvalidValueException(arg,ins.name());
-				args[i]=num;
+					throw new TooFewArgsException(numArgs,ins.name());
+				if ((num=parseNum(arg))==null)
+					throw new InvalidValueException(arg,ins.name());
+				else
+					args[i]=num;
 			}
 
 			switch (ins){
-				case INS_LOAD :
+				case LOAD:
 					ex.load(args);
+					break;
+				case REMOVE:
+					ex.remove();
 					break;
 			}
 

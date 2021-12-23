@@ -11,6 +11,9 @@ public class Exec {
 			stack.push(i);
 		}
 	}
+	public void remove (){
+		stack.pop();
+	}
 	public void print(){
 		stack.displayContents();
 	}

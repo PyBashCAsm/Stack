@@ -10,7 +10,7 @@
 		<jar destfile="build/Stack-${version}.jar" basedir="${build.dir}/">
 			<manifest>
                                <attribute name="Main-Class" value="com.stack.Main"/>
-		       </manifest>
-                </jar>
+			</manifest>
+		</jar>
 	</target>
 </project>
