@@ -22,5 +22,8 @@ public class InputStream {
 		}
 		return sb.toString();
 	}
+	public void close() throws IOException {
+		input.close();
+	}
 
 }
