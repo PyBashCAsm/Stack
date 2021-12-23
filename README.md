@@ -34,4 +34,5 @@ ant
 ```
 java -jar Stack-(version-code).jar [INPUT-FILE}
 ```
+where (version-code) maybe 0.0.1 , 0.0.2 etc.\
 You may also use a script to automate the process of execution of the program
