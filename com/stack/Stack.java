@@ -17,13 +17,13 @@ public class Stack <T>  {
 		caps=30;
 		stack=new ArrayList<>(caps);
 	}
-	private boolean stackNotFull(){
-		return stackIndex < caps;
+	private boolean stackFull(){
+		return stackIndex==caps-1;
 	}
 	public void push(T item){
-		if (stackNotFull()) {
+		if (!stackFull()) {
 			stack.add(item);
-			stackIndex++;
+			stackIndex++; 
 		}
 		else throw new StackOverflowException();
 	}
