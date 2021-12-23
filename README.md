@@ -22,9 +22,16 @@ The Stack source code is fully written in Java and it can be be run on all JVMs 
 ## Building Stack
 Stack can be built with the help of the Apache ant tool\
 To build the program perform the following steps:
-1. Install ant from its website 
-2. Make sure that the ant executable is in your PATH environment variable
-3. Run the following command at the root of the repository
+1. Clone this repository to a suitable directory
+2. Install ant from its website 
+3. Make sure that the ant executable is in your PATH environment variable
+4. Run the following command at the root of the repository
 ```
 ant
 ```
+5. This will produce a jar file called Stack-(version-code).jar
+6. To execute the jar file use the following command:
+```
+java -jar Stack-(version-code).jar [INPUT-FILE}
+```
+You may also use a script to automate the process of execution of the program
