@@ -13,8 +13,25 @@ load 96
 add
 print 
 ```
-This code will **load** the integer 48 and 96 into the stack ,then using the **add** instruction it will add the 2 items on the stack and
+This code will **load** the integer 48 and 96 into the stack, then using the **add** instruction it will add the 2 items on the stack and
 print the sum on the screen
 
 ## Requirements
 The Stack source code is fully written in Java and it can be be run on all JVMs supporting **Java 8 and above**
+
+## Building Stack
+Stack can be built with the help of the Apache ant tool\
+To build the program perform the following steps:
+1. Clone this repository to a suitable directory
+2. Install ant from its website 
+3. Make sure that the ant executable is in your PATH environment variable
+4. Run the following command at the root of the repository
+```
+ant
+```
+5. This will produce a jar file called Stack-(version-code).jar
+6. To execute the jar file use the following command:
+```
+java -jar Stack-(version-code).jar [INPUT-FILE}
+```
+You may also use a script to automate the process of execution of the program
