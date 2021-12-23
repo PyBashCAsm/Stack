@@ -42,8 +42,10 @@ public class Parser {
 
 	public boolean parseAndExec() throws IOException,NoSuchInstructionException,InvalidValueException,TooFewArgsException {
 		String read=input.getWord();
-		if (read==null) return false;
-
+		if (read==null) {
+			input.close();
+			return false;
+		}
 		else if (read.length()==0) return true;
 
 		else {

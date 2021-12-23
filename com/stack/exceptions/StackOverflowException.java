@@ -1,8 +1,8 @@
 package com.stack.exceptions;
 
-import java.lang.RuntimeException;
+import com.stack.exceptions.StackException;
 
-public class StackOverflowException extends RuntimeException {
+public class StackOverflowException extends StackException {
 	public StackOverflowException(){
 		super("The stack has overflowed. Exiting immediately...");
 	}
