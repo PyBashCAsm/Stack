@@ -32,6 +32,6 @@ ant
 5. This will produce a jar file called Stack-(version-code).jar
 6. To execute the jar file use the following command:
 ```
-java -jar Stack-(version-code).jar [INPUT-FILE}
+java -jar Stack-(version-code).jar [INPUT-FILE]
 ```
 You may also use a script to automate the process of execution of the program
