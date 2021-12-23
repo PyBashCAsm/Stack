@@ -1,5 +1,7 @@
 package com.stack;
 
+import com.stack.exceptions.TooFewArgsException;
+import com.stack.exceptions.StackEmptyException;
 
 public class Exec {
 	private final Stack<Number> stack;
@@ -18,6 +20,11 @@ public class Exec {
 		stack.displayContents();
 	}
 	public void add(){
-		stack.push(stack.pop().doubleValue()+stack.pop().doubleValue());
+		try {
+			stack.push(stack.pop().doubleValue()+stack.pop().doubleValue());
+		}
+		catch (StackEmptyException e){
+			throw new TooFewArgsException(2,"INS_ADD");
+		}
 	}
 }
