@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="Stack PL" default="build">
 	<property name="build.dir" value="build/"/>
-	<property name="version" value="0.0.1" />
+	<property name="version" value="0.0.2" />
 	<target name="build">
 		<mkdir dir="${build.dir}"/>
 		<javac destdir="${build.dir}" source="1.8" target="1.8">

@@ -3,3 +3,4 @@ com/stack/*.class
 com/stack/exceptions/*.class
 out/*
 build/*
+com/stack/compiler/*

@@ -1,4 +1,4 @@
-package com.stack;
+package com.stack.compiler;
 
 import com.stack.exceptions.CmdLineException;
 import com.stack.exceptions.SyntaxException;
