@@ -40,7 +40,7 @@ public class Parser {
 		}
 	}
 
-	public boolean parseAndExec() throws IOException,NoSuchInstructionException,InvalidValueException,TooFewArgsException {
+	public boolean parseAndExec() throws IOException {
 		String read=input.getWord();
 		if (read==null) {
 			input.close();
@@ -58,9 +58,6 @@ public class Parser {
 					ins=Instructions.LOAD;
 					numArgs=1;
 					break;
-				case "mload":
-					ins=Instructions.MLOAD;
-					varArgs=true;
 				case "remove":
 					ins=Instructions.REMOVE;
 					numArgs=0;
